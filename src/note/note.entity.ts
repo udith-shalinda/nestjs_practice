@@ -12,7 +12,7 @@ export class NoteEntity {
   text: string;
 
   @Column()
-  ownerId: string;
+  ownerId: number;
   @ManyToOne(()=> UserEntity, users=> users.notes)
   @JoinColumn({name:"ownerId"})
   owner: UserEntity

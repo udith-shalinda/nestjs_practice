@@ -8,13 +8,13 @@ export class ShareNotes {
   id: number;
 
   @Column()
-  senderId: string;
+  senderId: number;
   @ManyToOne(()=> UserEntity, users=> users.notesYouShared)
   @JoinColumn({name:"senderId"})
   sender: UserEntity
 
   @Column()
-  targetId: string;
+  targetId: number;
   @ManyToOne(()=> UserEntity, users=> users.notesSharedWithMe)
   @JoinColumn({name:"targetId"})
   target: UserEntity
